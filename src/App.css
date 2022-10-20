@@ -1,0 +1,21 @@
+@import url('http://getbootstrap.com/dist/css/bootstrap.css');
+
+
+body {
+  font-family: sans-serif;
+  height: 100%;
+  background-image: url('bg.png');
+  background-size: cover;
+  font-family: 'Comfortaa';
+  line-height: 30px;
+}
+input{
+  margin-top: 20px;  
+}
+.container{
+  height: 80vh;
+}
+.svg{
+  width: 60%;
+  height: 60%;
+}
