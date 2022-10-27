@@ -1,21 +1,80 @@
-@import url('http://getbootstrap.com/dist/css/bootstrap.css');
-
-
 body {
-  font-family: sans-serif;
-  height: 100%;
-  background-image: url('bg.png');
-  background-size: cover;
-  font-family: 'Comfortaa';
-  line-height: 30px;
+  --colors: #E9F7F5;
+  background-color: #FAFAFA;
 }
-input{
-  margin-top: 20px;  
+
+.App {}
+
+.logo {
+  width: 23px;
+  height: 36px;
+  display: inline-block;
+  margin-right: 10px;
+  margin-bottom: 10px;
 }
-.container{
-  height: 80vh;
+
+.list>a:hover {
+  border-bottom: 2px red solid;
 }
-.svg{
-  width: 60%;
-  height: 60%;
+
+.football {
+  color: #FF8252;
+}
+
+.small {
+  right: 450px;
+}
+
+.svg_icons {
+  width: 45px;
+  height: 45px;
+  position: absolute;
+
+}
+
+.bg_chart {
+  background: url('./images/graph.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.bg_last {
+  background: url('./images/sketch.png');
+  background-size: 40%;
+  background-position: right;
+  background-repeat: no-repeat;
+}
+
+section {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  z-index: 2;
+}
+
+#curve1 {
+  position: absolute;
+  top: -120px;
+  width: 100%;
+  z-index: 1;
+}
+
+#curve1 path {
+  fill: #FF8252;
+}
+
+.curyBackground {
+  background-color: #FF8252;
+  width: 100%;
+  height: 250px;
+  position: absolute;
+  top: -200px;
+}
+
+input {
+  background: none;
+  border-bottom: 1px solid black;
+  width: 300px;
+  height: 60px;
+  padding: 20px;
 }
