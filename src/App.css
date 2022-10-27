@@ -1,9 +1,11 @@
 body {
-  --colors: #E9F7F5;
-  background-color: #FAFAFA;
+  --colors: #e9f7f5;
+  background-color: #fafafa;
 }
 
-.App {}
+.App {
+  width: 100%;
+}
 
 .logo {
   width: 23px;
@@ -13,33 +15,31 @@ body {
   margin-bottom: 10px;
 }
 
-.list>a:hover {
+.list > a:hover {
   border-bottom: 2px red solid;
 }
 
 .football {
-  color: #FF8252;
+  color: #ff8252;
 }
 
 .small {
   right: 450px;
 }
-
 .svg_icons {
   width: 45px;
   height: 45px;
   position: absolute;
-
 }
 
 .bg_chart {
-  background: url('./images/graph.png');
+  background: url("./images/graph.png");
   background-size: contain;
   background-repeat: no-repeat;
 }
 
 .bg_last {
-  background: url('./images/sketch.png');
+  background: url("./images/sketch.png");
   background-size: 40%;
   background-position: right;
   background-repeat: no-repeat;
@@ -60,11 +60,11 @@ section {
 }
 
 #curve1 path {
-  fill: #FF8252;
+  fill: #ff8252;
 }
 
 .curyBackground {
-  background-color: #FF8252;
+  background-color: #ff8252;
   width: 100%;
   height: 250px;
   position: absolute;
@@ -77,4 +77,15 @@ input {
   width: 300px;
   height: 60px;
   padding: 20px;
+}
+.my {
+  display: flex;
+  flex-flow: row nowrap;
+}
+@media (max-width: 865px) {
+  .my {
+    display: flex;
+    flex-flow: column wrap;
+    background: black;
+  }
 }

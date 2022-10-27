@@ -7,7 +7,7 @@ function Nav() {
     <>
       <img src={Logoimg} className="absolute" />
 
-      <nav className="flex flex-row  text-zinc-800 py-7 px-40 w-full items-baseline">
+      <nav className="flex flex-row  text-zinc-800 py-7 px-40 max-w-full  items-baseline">
         <div className="mb-2 sm:mb-0 uppercase">
           <img src={Logo} className="logo" />
           <a

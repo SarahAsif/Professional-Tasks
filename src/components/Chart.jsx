@@ -2,23 +2,22 @@ import React from "react";
 import "../App.css";
 import User1 from "../images/user1.png";
 import User2 from "../images/user2.png";
-import Button from "@mui/material/Button";
 import styled from "styled-components";
 
 import Star from "../images/star.png";
 
 const Chart = () => {
   return (
-    <div className="bg_chart pt-52">
-      <div className="px-40 pt-20 flex flex-row space-x-20">
+    <div className="pt-52 max-w-100">
+      <div className="ml-40 pt-20 flex lg:flex-row flex-col w-100">
         <div className="max-w-lg">
-          <h1 className="font-semibold text-5xl leading-normal">
-            Rank the Chart and Become the{" "}
+          <h1 className="font-semibold lg:text-5xl text-lg leading-normal">
+            Rank the Chart and Become the
             <span className="football">Best in Your City</span>
           </h1>
         </div>
-        <div className="flex space-x-20 flex-row ">
-          <div className=" bg-white shadow-xl w-80 h-96 p-7 rounded-xl flex flex-col space-y-7">
+        <div className="w-100 my">
+          <div className=" bg-white shadow-xl max-w-96 h-96 p-7 rounded-xl flex flex-col space-y-7">
             <div className="font-bold flex flex-row space-x-5 items-center">
               <div className="text-orange-400 text-3xl">1</div>
               <div>
@@ -63,7 +62,7 @@ const Chart = () => {
             </div>
           </div>
           <div className="py-20">
-            <div className=" bg-white shadow-xl w-80 h-96 p-7  rounded-xl flex flex-col space-y-7">
+            <div className=" bg-white shadow-xl max-w-80 h-96 p-7  rounded-xl flex flex-col space-y-7">
               <div className="font-bold flex flex-row space-x-5 items-center">
                 <div className="text-orange-400 text-3xl">2</div>
                 <div>
