@@ -11,30 +11,47 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
+import clsx from "clsx";
+import { IsMobileWidth } from "../utils";
+import { IsTabletWidth } from "../utils";
 
 const Rate = () => {
+  const mobileWidth = IsMobileWidth();
+  const tabletWidth = IsTabletWidth();
+
   return (
     <div>
-      <div className="pt-60 pb-40 text-center">
-        <h1 className="font-semibold text-5xl mb-8">
+      <div
+        className={clsx(
+          "pt-40 pb-40 text-center",
+          mobileWidth && "pt-6 pb-4",
+          tabletWidth && "pt-6 pb-4"
+        )}
+      >
+        <h1
+          className={clsx(
+            "font-semibold text-5xl mb-8",
+            mobileWidth && "text-2xl",
+            tabletWidth && "text-2xl"
+          )}
+        >
           Rate <span className="football ">Players</span> and Win{" "}
           <span className="football">Man of the Match</span>
         </h1>
       </div>
-      <div className="swipper">
-        <div className="px-9">
+      <div className="">
+        <div className="px-10">
           <Swiper
-            // install Swiper modules
             modules={[Navigation, Pagination, Scrollbar, A11y]}
-            spaceBetween={50}
-            slidesPerView={2}
+            spaceBetween={5}
+            slidesPerView={3}
             onSwiper={(swiper) => console.log(swiper)}
             onSlideChange={() => console.log("slide change")}
           >
             <SwiperSlide>
-              <div className="flex flex-col ">
+              <div className="flex flex-col swiper-slide">
                 <div className="w-30 h-20 bg-white shadow-md grid grid-flow-col justify-between rounded-lg items-center px-6">
-                  <div className="flex flex-row items-center gap-3">
+                  <div className={clsx("flex flex-row items-center gap-3 ")}>
                     <img src={User1} className="w-13" />
                     <div className="text-zinc-800 font-bold">
                       Alfredo Rhielden
@@ -87,7 +104,7 @@ const Rate = () => {
               </div>
             </SwiperSlide>
             <SwiperSlide>
-              <div className="flex flex-col ">
+              <div className="flex flex-col  swiper-slide">
                 <div className="w-30 h-20 shadow-md bg-white grid grid-flow-col justify-between rounded-lg items-center px-6">
                   <div className="flex flex-row items-center gap-3">
                     <img src={User2} className="w-13" />
@@ -140,7 +157,7 @@ const Rate = () => {
               </div>
             </SwiperSlide>
             <SwiperSlide>
-              <div className="flex flex-col ">
+              <div className="flex flex-col  swiper-slide">
                 <div className="w-30 shadow-md h-20 bg-white grid grid-flow-col justify-between rounded-lg items-center px-6">
                   <div className="flex flex-row items-center gap-3">
                     <img src={User3} className="w-13" />
@@ -195,7 +212,7 @@ const Rate = () => {
               </div>
             </SwiperSlide>
             <SwiperSlide>
-              <div className="flex flex-col ">
+              <div className="flex flex-col  swiper-slide">
                 <div className="w-30 h-20 shadow-md bg-white grid grid-flow-col justify-between rounded-lg items-center px-6">
                   <div className="flex flex-row items-center gap-3">
                     <img src={User4} className="w-13" />

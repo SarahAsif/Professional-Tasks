@@ -3,20 +3,28 @@ import "../App.css";
 import User1 from "../images/user1.png";
 import User2 from "../images/user2.png";
 import styled from "styled-components";
-
 import Star from "../images/star.png";
+import clsx from "clsx";
+import { IsMobileWidth } from "../utils";
 
 const Chart = () => {
+  const mobileWidth = IsMobileWidth();
+
   return (
-    <div className="pt-52 max-w-100">
-      <div className="ml-40 pt-20 flex lg:flex-row flex-col w-100">
-        <div className="max-w-lg">
-          <h1 className="font-semibold lg:text-5xl text-lg leading-normal">
+    <div className={clsx("pt-52", mobileWidth && "pt-5 text-center")}>
+      <div
+        className={clsx(
+          "ml-40 pt-20 flex flex-row gap-5",
+          mobileWidth && "ml-2 pt-5 m-2 flex flex-col "
+        )}
+      >
+        <div className="max-w-xl">
+          <h1 className="font-semibold lg:text-5xl text-xl ">
             Rank the Chart and Become the
-            <span className="football">Best in Your City</span>
+            <span className="football p-2">Best in Your City</span>
           </h1>
         </div>
-        <div className="w-100 my">
+        <div>
           <div className=" bg-white shadow-xl max-w-96 h-96 p-7 rounded-xl flex flex-col space-y-7">
             <div className="font-bold flex flex-row space-x-5 items-center">
               <div className="text-orange-400 text-3xl">1</div>
@@ -61,6 +69,8 @@ const Chart = () => {
               </div>
             </div>
           </div>
+        </div>
+        <div>
           <div className="py-20">
             <div className=" bg-white shadow-xl max-w-80 h-96 p-7  rounded-xl flex flex-col space-y-7">
               <div className="font-bold flex flex-row space-x-5 items-center">

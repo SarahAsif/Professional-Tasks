@@ -3,20 +3,35 @@ import "../App.css";
 import Phone from "../images/phone.png";
 import Button from "@mui/material/Button";
 import TrendingFlat from "@mui/icons-material/TrendingFlat";
+import clsx from "clsx";
+import { IsMobileWidth } from "../utils";
+
 const Last = () => {
+  const mobileWidth = IsMobileWidth();
+
   return (
     <>
       {" "}
-      <div className="bg_last px-36 leading-normal">
-        <div className="flex flex-row gap-20 ">
+      <div
+        className={clsx(
+          "bg_last px-36 leading-normal",
+          mobileWidth && "text-center px-5"
+        )}
+      >
+        <div className="flex flex-row">
           <div className="z-30">
             <img src={Phone} />
           </div>
           <div className="space-y-7 flex flex-col justify-center z-30">
-            <div className="leading-normal text-5xl max-w-lg">
+            <div className="leading-normal lg:text-5xl text-2xl lg:max-w-lg max-w-xs text-center">
               Don't miss the launch of our application
             </div>
-            <div className="flex flex-row space-x-10">
+            <div
+              className={clsx(
+                "flex flex-row space-x-10",
+                mobileWidth && "flex-col space-x-0 text-center"
+              )}
+            >
               <div>
                 <input type="text" placeholder="Leave Your Email" />
               </div>
@@ -33,7 +48,7 @@ const Last = () => {
           </div>
         </div>
       </div>
-      <section>
+      {/* <section>
         <div class="curyBackground">
           <svg
             id="curve1"
@@ -48,7 +63,7 @@ const Last = () => {
             />
           </svg>
         </div>
-      </section>
+      </section> */}
     </>
   );
 };

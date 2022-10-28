@@ -5,14 +5,42 @@ import Football from "../images/football.png";
 import Big from "../images/big.png";
 import Small from "../images/small.png";
 import Icons from "../images/icons.png";
+import clsx from "clsx";
+import { IsMobileWidth } from "../utils";
+import { IsDesktopWidth } from "../utils";
+import { IsTabletWidth } from "../utils";
+import { IsDesktopSmallWidth } from "../utils";
 
 const Main = () => {
+  const mobileWidth = IsMobileWidth();
+  const desktopWidth = IsDesktopWidth();
+  const tabletWidth = IsTabletWidth();
+  const desktopSmallWidth = IsDesktopSmallWidth();
+
   return (
-    <div className="flex flex-row justify-between w-100">
-      <div className=" text-zinc-800 mt-40">
-        <div className="py-7 px-40 grid grid-flow-row max-w-4xl">
+    <div
+      className={clsx(
+        "flex flex-row justify-between w-screen",
+        mobileWidth && "text-center items-center flex-col",
+        tabletWidth && "text-center flex-col"
+      )}
+    >
+      <div
+        className={clsx(
+          "text-zinc-800 mt-40 w-100",
+          mobileWidth && "mt-1 text-center",
+          tabletWidth && "text-center "
+        )}
+      >
+        <div
+          className={clsx(
+            "py-7 px-40 grid grid-flow-row",
+            mobileWidth && "text-center items-center ",
+            tabletWidth && " text-center items-center"
+          )}
+        >
           <div>
-            <h1 className="lg:text-6xl text-xl mb-8 font-semibold">
+            <h1 className="text-6xl mb-8 font-semibold">
               Play <span className="football ">Football</span> Easily
             </h1>
             <div className="mb-4">
@@ -23,7 +51,7 @@ const Main = () => {
             </div>
           </div>
         </div>
-        <div className="px-40">
+        <div className={clsx("px-40", mobileWidth && "px-0 text-center")}>
           <Button
             variant="contained"
             endIcon={<TrendingFlat />}
@@ -33,10 +61,19 @@ const Main = () => {
           </Button>
         </div>
         <div>
-          <div className="grid grid-flow-col gap-1 px-40 py-20 max-w-6xl relative">
-            <div className="grid grid-flow-col">
+          <div
+            className={clsx(
+              "flex flex-row gap-1 px-40 py-20 ",
+              mobileWidth && "flex-col px-0 py-8 text-center "
+            )}
+          >
+            <div
+              className={clsx(
+                "grid grid-flow-col text-center",
+                mobileWidth && "text-center justify-around"
+              )}
+            >
               <div>
-                <img src={Icons} className="absolute" />
                 <svg
                   className="svg_icons"
                   xmlns="http://www.w3.org/2000/svg"
@@ -45,15 +82,20 @@ const Main = () => {
                   <path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12C22,10.84 21.79,9.69 21.39,8.61L19.79,10.21C19.93,10.8 20,11.4 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4C12.6,4 13.2,4.07 13.79,4.21L15.4,2.6C14.31,2.21 13.16,2 12,2M19,2L15,6V7.5L12.45,10.05C12.3,10 12.15,10 12,10A2,2 0 0,0 10,12A2,2 0 0,0 12,14A2,2 0 0,0 14,12C14,11.85 14,11.7 13.95,11.55L16.5,9H18L22,5H19V2M12,6A6,6 0 0,0 6,12A6,6 0 0,0 12,18A6,6 0 0,0 18,12H16A4,4 0 0,1 12,16A4,4 0 0,1 8,12A4,4 0 0,1 12,8V6Z" />
                 </svg>
               </div>
-
               <div>
-                <div className="text-orange-400 font-semibold">Create Game</div>
+                <div className="text-orange-400 font-semibold ">
+                  Create Game
+                </div>
                 <div>Easy to create</div>
               </div>
             </div>
-            <div className="grid grid-flow-col">
+            <div
+              className={clsx(
+                "grid grid-flow-col",
+                mobileWidth && "text-center justify-around"
+              )}
+            >
               <div>
-                <img src={Icons} className="absolute  mt-4" />
                 <svg
                   className="svg_icons"
                   xmlns="http://www.w3.org/2000/svg"
@@ -68,9 +110,13 @@ const Main = () => {
                 <div>Easy to create</div>
               </div>
             </div>
-            <div className="grid grid-flow-col">
+            <div
+              className={clsx(
+                "grid grid-flow-col ",
+                mobileWidth && "text-center justify-around"
+              )}
+            >
               <div>
-                <img src={Icons} className="absolute mt-4" />
                 <svg
                   className="svg_icons"
                   xmlns="http://www.w3.org/2000/svg"
@@ -81,7 +127,7 @@ const Main = () => {
               </div>
 
               <div>
-                <div className="text-orange-400 font-semibold">Climb Rank</div>
+                <div className="text-orange-400 font-semibold ">Climb Rank</div>
                 <div>Become a superstar</div>
               </div>
             </div>
@@ -91,12 +137,19 @@ const Main = () => {
             </div>
           </div>
         </div>
-        <img src={Big} className="absolute right-1/4 top-2/3 " />
-        <img src={Small} className="absolute top-3/4 small" />
       </div>
 
       <div>
-        <img src={Football} />
+        <img
+          src={Football}
+          className={clsx(
+            "visibility: visible",
+            mobileWidth && "visibility: hidden",
+            desktopWidth && "visibility: visible",
+            tabletWidth && "visibility: hidden",
+            desktopSmallWidth && "visibility: visible"
+          )}
+        />
       </div>
     </div>
   );

@@ -6,15 +6,23 @@ body {
 .App {
   width: 100%;
 }
+@media screen and (min-width: 667px) {
 
 .logo {
   width: 23px;
-  height: 36px;
-  display: inline-block;
-  margin-right: 10px;
-  margin-bottom: 10px;
+  height: 20px;
 }
+}
+@media screen and (min-width: 1000px) {
 
+  .logo {
+    width: 23px;
+    height: 36px;
+    display: inline-block;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    }
+  }
 .list > a:hover {
   border-bottom: 2px red solid;
 }
@@ -29,7 +37,6 @@ body {
 .svg_icons {
   width: 45px;
   height: 45px;
-  position: absolute;
 }
 
 .bg_chart {
@@ -45,7 +52,7 @@ body {
   background-repeat: no-repeat;
 }
 
-section {
+/* section {
   position: relative;
   width: 100%;
   margin: 0;
@@ -69,23 +76,29 @@ section {
   height: 250px;
   position: absolute;
   top: -200px;
-}
+} */
 
 input {
   background: none;
   border-bottom: 1px solid black;
-  width: 300px;
+  width: 250px;
   height: 60px;
   padding: 20px;
 }
-.my {
-  display: flex;
-  flex-flow: row nowrap;
+
+@media screen and (min-width: 640px) {
+  .swiper-container {
+    width: 640px;
+  }
 }
-@media (max-width: 865px) {
-  .my {
-    display: flex;
-    flex-flow: column wrap;
-    background: black;
+
+@media screen and (min-width: 768px) {
+  .swiper-container {
+    width: 768px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .swiper-container {
+    width: 1024px;
   }
 }
