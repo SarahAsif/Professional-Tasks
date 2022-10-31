@@ -2,15 +2,19 @@ import React from "react";
 import "../App.css";
 import clsx from "clsx";
 import { IsMobileWidth } from "../utils";
+import { IsTabletWidth } from "../utils";
+
 const Footer = () => {
   const mobileWidth = IsMobileWidth();
+  const tabletWidth = IsTabletWidth();
 
   return (
-    <div className="p-10 bg-zinc-800 ">
+    <div className="p-5 bg-zinc-800">
       <nav
         className={clsx(
           "text-white px-40",
-          mobileWidth && "text-center items-center p-0"
+          mobileWidth && "text-center items-center p-0",
+          tabletWidth && "items-center px-10"
         )}
       >
         <div className="flex flex-row items-center py-8">

@@ -6,26 +6,40 @@ import styled from "styled-components";
 import Star from "../images/star.png";
 import clsx from "clsx";
 import { IsMobileWidth } from "../utils";
+import { IsTabletWidth } from "../utils";
+import { IsDesktopSmallWidth } from "../utils";
+import { IsDesktopWidth } from "../utils";
 
 const Chart = () => {
   const mobileWidth = IsMobileWidth();
+  const tabletWidth = IsTabletWidth();
+  const desktopSmallWidth = IsDesktopSmallWidth();
+  const desktopWidth = IsDesktopWidth();
 
   return (
     <div className={clsx("pt-52", mobileWidth && "pt-5 text-center")}>
       <div
         className={clsx(
-          "ml-40 pt-20 flex flex-row gap-5",
-          mobileWidth && "ml-2 pt-5 m-2 flex flex-col "
+          "px-40 pt-20 flex flex-row gap-5",
+          desktopWidth && "pt-5 flex flex-col text-center items-center",
+          (tabletWidth || desktopSmallWidth || mobileWidth) &&
+            "flex flex-col items-center text-center"
         )}
       >
         <div className="max-w-xl">
-          <h1 className="font-semibold lg:text-5xl text-xl ">
+          <h1
+            className={clsx(
+              "font-semibold text-5xl leading-normal",
+              (tabletWidth || desktopSmallWidth || desktopWidth) &&
+                "text-5xl text-center "
+            )}
+          >
             Rank the Chart and Become the
             <span className="football p-2">Best in Your City</span>
           </h1>
         </div>
         <div>
-          <div className=" bg-white shadow-xl max-w-96 h-96 p-7 rounded-xl flex flex-col space-y-7">
+          <div className=" bg-white shadow-xl w-96 h-96 p-7 rounded-xl flex flex-col space-y-7">
             <div className="font-bold flex flex-row space-x-5 items-center">
               <div className="text-orange-400 text-3xl">1</div>
               <div>
@@ -72,7 +86,7 @@ const Chart = () => {
         </div>
         <div>
           <div className="py-20">
-            <div className=" bg-white shadow-xl max-w-80 h-96 p-7  rounded-xl flex flex-col space-y-7">
+            <div className=" bg-white shadow-xl w-96 h-96 p-7  rounded-xl flex flex-col space-y-7 ">
               <div className="font-bold flex flex-row space-x-5 items-center">
                 <div className="text-orange-400 text-3xl">2</div>
                 <div>

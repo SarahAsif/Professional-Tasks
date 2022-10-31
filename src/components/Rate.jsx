@@ -24,15 +24,13 @@ const Rate = () => {
       <div
         className={clsx(
           "pt-40 pb-40 text-center",
-          mobileWidth && "pt-6 pb-4",
-          tabletWidth && "pt-6 pb-4"
+          (mobileWidth || tabletWidth) && "pt-6 pb-4"
         )}
       >
         <h1
           className={clsx(
             "font-semibold text-5xl mb-8",
-            mobileWidth && "text-2xl",
-            tabletWidth && "text-2xl"
+            (tabletWidth || mobileWidth) && "text-5xl m-3"
           )}
         >
           Rate <span className="football ">Players</span> and Win{" "}

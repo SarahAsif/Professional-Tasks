@@ -21,8 +21,8 @@ const Main = () => {
     <div
       className={clsx(
         "flex flex-row justify-between w-screen",
-        mobileWidth && "text-center items-center flex-col",
-        tabletWidth && "text-center flex-col"
+        (mobileWidth || tabletWidth || desktopSmallWidth) &&
+          "text-center items-center flex-col"
       )}
     >
       <div
@@ -35,8 +35,8 @@ const Main = () => {
         <div
           className={clsx(
             "py-7 px-40 grid grid-flow-row",
-            mobileWidth && "text-center items-center ",
-            tabletWidth && " text-center items-center"
+            (mobileWidth || tabletWidth || desktopSmallWidth) &&
+              "text-center items-center "
           )}
         >
           <div>
@@ -64,13 +64,13 @@ const Main = () => {
           <div
             className={clsx(
               "flex flex-row gap-1 px-40 py-20 ",
-              mobileWidth && "flex-col px-0 py-8 text-center "
+              mobileWidth && "flex-col px-0 py-8 text-center  justify-between "
             )}
           >
             <div
               className={clsx(
                 "grid grid-flow-col text-center",
-                mobileWidth && "text-center justify-around"
+                mobileWidth && "text-center justify-center"
               )}
             >
               <div>
@@ -92,7 +92,7 @@ const Main = () => {
             <div
               className={clsx(
                 "grid grid-flow-col",
-                mobileWidth && "text-center justify-around"
+                mobileWidth && "text-center justify-center"
               )}
             >
               <div>
@@ -113,7 +113,7 @@ const Main = () => {
             <div
               className={clsx(
                 "grid grid-flow-col ",
-                mobileWidth && "text-center justify-around"
+                mobileWidth && "text-center justify-center"
               )}
             >
               <div>

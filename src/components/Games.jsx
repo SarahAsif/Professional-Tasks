@@ -41,22 +41,31 @@ const Games = () => {
       </div>{" "}
       <div
         className={clsx(
-          "flex flex-row gap-1 py-7 px-40",
+          "flex flex-row gap-1 py-7 px-40 justify-between",
           mobileWidth && "flex-col px-1 py-0 text-center items-center",
-          tabletWidth && "flex-col px-1 py-0 text-center items-center",
+          tabletWidth && "flex-col px-0 py-0 text-center items-center",
           desktopSmallWidth && "flex-col px-1 py-0 text-center items-center"
         )}
       >
         <div>
-          <img src={Map} className={clsx("m-5", mobileWidth && "m-1")} />
-        </div>
-        <div className="py-7 max-w-md">
-          <div className="grid grid-flow-row gap-10 m-10">
-            <h1 className="text-5xl leading-normal ">
-              Find Games <span className="football ">Near You </span> Any Where
-              Any Time
-            </h1>
-            <div>Explore nearby game based on your current location</div>{" "}
+          <div>
+            <img
+              src={Map}
+              className={clsx(
+                "m-5",
+                mobileWidth && "m-1",
+                tabletWidth && "m-0"
+              )}
+            />
+          </div>
+          <div className="py-7 max-w-md">
+            <div className="grid grid-flow-row gap-10 m-10">
+              <h1 className="text-5xl leading-normal ">
+                Find Games <span className="football ">Near You </span> Any
+                Where Any Time
+              </h1>
+              <div>Explore nearby game based on your current location</div>{" "}
+            </div>
           </div>
         </div>
         <div>
@@ -122,8 +131,8 @@ const Games = () => {
             </Paper>
           </Card>
         </div>
+        <div></div>
       </div>
-      <div></div>
     </div>
   );
 };

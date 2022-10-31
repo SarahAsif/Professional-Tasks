@@ -3,16 +3,19 @@ import Logoimg from "../images/sidelogo.png";
 import "../App.css";
 import clsx from "clsx";
 import { IsMobileWidth } from "../utils";
+import { IsTabletWidth } from "../utils";
 
 function Nav() {
   const mobileWidth = IsMobileWidth();
+  const tabletWidth = IsTabletWidth();
 
   return (
     <>
       <nav
         className={clsx(
           "flex flex-row  text-zinc-800  py-7 px-40 w-100  items-center",
-          mobileWidth && "px-0 text-center"
+          mobileWidth && "px-0 text-center ",
+          tabletWidth && "px-20"
         )}
       >
         <div className={clsx("uppercase flex flex-row", mobileWidth && "")}>
