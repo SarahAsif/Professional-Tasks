@@ -21,7 +21,7 @@ const Chart = () => {
       <div
         className={clsx(
           "px-40 pt-20 flex flex-row gap-5",
-          desktopWidth && "pt-5 flex flex-col text-center items-center",
+
           (tabletWidth || desktopSmallWidth || mobileWidth) &&
             "flex flex-col items-center text-center"
         )}

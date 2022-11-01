@@ -12,12 +12,13 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import clsx from "clsx";
-import { IsMobileWidth } from "../utils";
+import { IsDesktopSmallWidth, IsMobileWidth } from "../utils";
 import { IsTabletWidth } from "../utils";
 
 const Rate = () => {
   const mobileWidth = IsMobileWidth();
   const tabletWidth = IsTabletWidth();
+  const desktopSmallWidth = IsDesktopSmallWidth();
 
   return (
     <div>
@@ -42,7 +43,9 @@ const Rate = () => {
           <Swiper
             modules={[Navigation, Pagination, Scrollbar, A11y]}
             spaceBetween={5}
-            slidesPerView={3}
+            slidesPerView={
+              mobileWidth || tabletWidth || desktopSmallWidth ? 1 : 3
+            }
             onSwiper={(swiper) => console.log(swiper)}
             onSlideChange={() => console.log("slide change")}
           >

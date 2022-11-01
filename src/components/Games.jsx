@@ -48,16 +48,12 @@ const Games = () => {
         )}
       >
         <div>
-          <div>
-            <img
-              src={Map}
-              className={clsx(
-                "m-5",
-                mobileWidth && "m-1",
-                tabletWidth && "m-0"
-              )}
-            />
-          </div>
+          <img
+            src={Map}
+            className={clsx("m-5", mobileWidth && "m-1", tabletWidth && "m-0")}
+          />
+        </div>
+        <div>
           <div className="py-7 max-w-md">
             <div className="grid grid-flow-row gap-10 m-10">
               <h1 className="text-5xl leading-normal ">
@@ -68,17 +64,18 @@ const Games = () => {
             </div>
           </div>
         </div>
-        <div>
-          <Card className="w-auto h-auto ">
+        <div className="w-72">
+          <Card className=" h-auto w-100">
             <Paper round={true} variant="elevation24 z-30 ">
               <div
                 className={clsx(
-                  "flex flex-row  gap-1 p-10  ",
-                  mobileWidth && "text-center flex-col items-center"
+                  "flex flex-row  gap-1 p-7",
+                  (mobileWidth || tabletWidth || desktopSmallWidth) &&
+                    "text-center flex-col items-center"
                 )}
               >
                 <div>
-                  <img src={DP} className="" />
+                  <img src={DP} className="p-2" />
                 </div>
                 <div className="leading-10 text-zinc-400">
                   <div className="grid grid-flow-col gap-2 ">
@@ -115,17 +112,11 @@ const Games = () => {
                       <div>5 Players</div>
                     </div>
                   </div>
-                </div>
-                <div className="grid grid-flow-col gap-2">
-                  <button>
-                    <Button
-                      sx={{ borderRadius: 28 }}
-                      variant="contained"
-                      color="warning"
-                    >
+                  <div className="">
+                    <Button variant="contained" color="warning">
                       Start Demo
                     </Button>
-                  </button>
+                  </div>
                 </div>
               </div>
             </Paper>

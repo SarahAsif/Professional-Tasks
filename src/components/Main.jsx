@@ -2,9 +2,6 @@ import React from "react";
 import Button from "@mui/material/Button";
 import TrendingFlat from "@mui/icons-material/TrendingFlat";
 import Football from "../images/football.png";
-import Big from "../images/big.png";
-import Small from "../images/small.png";
-import Icons from "../images/icons.png";
 import clsx from "clsx";
 import { IsMobileWidth } from "../utils";
 import { IsDesktopWidth } from "../utils";
@@ -20,23 +17,23 @@ const Main = () => {
   return (
     <div
       className={clsx(
-        "flex flex-row justify-between w-screen",
+        "flex flex-row justify-between",
         (mobileWidth || tabletWidth || desktopSmallWidth) &&
           "text-center items-center flex-col"
       )}
     >
       <div
         className={clsx(
-          "text-zinc-800 mt-40 w-100",
+          "text-zinc-800 mt-40",
           mobileWidth && "mt-1 text-center",
           tabletWidth && "text-center "
         )}
       >
         <div
           className={clsx(
-            "py-7 px-40 grid grid-flow-row",
+            "py-7 pl-40 grid grid-flow-row",
             (mobileWidth || tabletWidth || desktopSmallWidth) &&
-              "text-center items-center "
+              "pl-5 text-center items-center "
           )}
         >
           <div>
@@ -144,10 +141,10 @@ const Main = () => {
           src={Football}
           className={clsx(
             "visibility: visible",
-            mobileWidth && "visibility: hidden",
-            desktopWidth && "visibility: visible",
-            tabletWidth && "visibility: hidden",
-            desktopSmallWidth && "visibility: visible"
+            mobileWidth && "visibility: hidden overflow-x-hidden",
+            desktopWidth && "visibility: visible overflow-x-hidden",
+            tabletWidth && "visibility: hidden overflow-x-hidden",
+            desktopSmallWidth && "visibility: hidden overflow-x-hidden"
           )}
         />
       </div>
