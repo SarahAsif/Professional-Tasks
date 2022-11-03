@@ -51,7 +51,7 @@ const Rate = () => {
           >
             <SwiperSlide>
               <div className="flex flex-col swiper-slide">
-                <div className="w-30 h-20 bg-white shadow-md grid grid-flow-col justify-between rounded-lg items-center px-6">
+                <div className="w-30 h-auto p-3 bg-white shadow-md grid grid-flow-col justify-between rounded-lg items-center px-6">
                   <div className={clsx("flex flex-row items-center gap-3 ")}>
                     <img src={User1} className="w-13" />
                     <div className="text-zinc-800 font-bold">
@@ -71,7 +71,7 @@ const Rate = () => {
                   </div>
                 </div>
                 <div>
-                  <div className="h-64 mt-4 shadow-lg bg-white grid grid-flow-row gap-2 rounded-lg items-center p-2">
+                  <div className="h-auto mt-4 shadow-lg bg-white grid grid-flow-row gap-2 rounded-lg items-center p-2">
                     <div className="flex flex-row justify-between text-right text-orange-400 px-8 py-4 ">
                       <div className="grid grid-flow-col  gap-3">
                         <img src={Star} className="w-13" />
@@ -89,7 +89,7 @@ const Rate = () => {
                       of the match! I think I have buy the shoes like you in the
                       future. Anyway, Thank you!
                     </div>
-                    <div className="text-right pr-6">
+                    <div className="text-right pr-6 py-3">
                       <button>
                         <Button
                           sx={{ borderRadius: 28 }}
@@ -124,7 +124,7 @@ const Rate = () => {
                   </div>
                 </div>
                 <div>
-                  <div className="h-64 mt-4 shadow-lg bg-white grid grid-flow-row gap-2 rounded-lg items-center p-2">
+                  <div className="h-auto mt-4 shadow-lg bg-white grid grid-flow-row gap-2 rounded-lg items-center p-2">
                     <div className="flex flex-row justify-between text-right text-orange-400 px-8 py-4 ">
                       <div className="grid grid-flow-col  gap-3">
                         <img src={Star} className="w-13" />
@@ -142,7 +142,7 @@ const Rate = () => {
                       of the match! I think I have buy the shoes like you in the
                       future. Anyway, Thank you!
                     </div>
-                    <div className="text-right pr-6">
+                    <div className="text-right pr-6  py-3">
                       <button>
                         <Button
                           sx={{ borderRadius: 28 }}
@@ -179,7 +179,7 @@ const Rate = () => {
                   </div>
                 </div>
                 <div>
-                  <div className="h-64 mt-4 shadow-lg bg-white grid grid-flow-row gap-2 rounded-lg items-center p-2">
+                  <div className="h-auto mt-4 shadow-lg bg-white grid grid-flow-row gap-2 rounded-lg items-center p-2">
                     <div className="flex flex-row justify-between text-right text-orange-400 px-8 py-4 ">
                       <div className="grid grid-flow-col  gap-3">
                         <img src={Star} className="w-13" />
@@ -197,7 +197,7 @@ const Rate = () => {
                       of the match! I think I have buy the shoes like you in the
                       future. Anyway, Thank you!
                     </div>
-                    <div className="text-right pr-6">
+                    <div className="text-right pr-6  py-3">
                       <button>
                         <Button
                           sx={{ borderRadius: 28 }}
