@@ -10,6 +10,7 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import InboxIcon from "@mui/icons-material/MoveToInbox";
 import Logo from "../images/logo.png";
+import Drawer from "../images/drawer.png";
 
 import MailIcon from "@mui/icons-material/Mail";
 import clsx from "clsx";
@@ -21,28 +22,15 @@ export default function SwipeableTemporaryDrawer() {
   const tabletWidth = IsTabletWidth();
 
   const [state, setState] = React.useState({
-    top: false,
     left: false,
-    bottom: false,
-    right: false,
   });
 
   const toggleDrawer = (anchor, open) => (event) => {
-    if (
-      event &&
-      event.type === "keydown" &&
-      (event.key === "Tab" || event.key === "Shift")
-    ) {
-      return;
-    }
-
     setState({ ...state, [anchor]: open });
   };
 
   const list = (anchor) => (
     <Box
-      sx={{ width: anchor === "top" || anchor === "bottom" ? "auto" : 250 }}
-      role="presentation"
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
@@ -95,28 +83,21 @@ export default function SwipeableTemporaryDrawer() {
         >
           <div>
             {" "}
-            {["right"].map((anchor) => (
-              <React.Fragment key={anchor}>
-                <button>
-                  <svg
-                    onClick={toggleDrawer(anchor, true)}
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" />
-                  </svg>
-                  {anchor}
-                </button>
-                <SwipeableDrawer
-                  anchor={anchor}
-                  open={state[anchor]}
-                  onClose={toggleDrawer(anchor, false)}
-                  onOpen={toggleDrawer(anchor, true)}
-                >
-                  {list(anchor)}
-                </SwipeableDrawer>
-              </React.Fragment>
-            ))}
+            <button>
+              <img
+                onClick={toggleDrawer("left", true)}
+                src={Drawer}
+                className="drawer"
+              />
+            </button>
+            <SwipeableDrawer
+              anchor={"left"}
+              open={state["left"]}
+              onClose={toggleDrawer("left", false)}
+              onOpen={toggleDrawer("left", true)}
+            >
+              {list("left")}
+            </SwipeableDrawer>
           </div>
         </div>
       </nav>

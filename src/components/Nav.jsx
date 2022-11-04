@@ -4,6 +4,7 @@ import clsx from "clsx";
 import { IsMobileWidth } from "../utils";
 import { IsTabletWidth } from "../utils";
 import ResponsiveDrawer from "../components/ResponsiveDrawer";
+import { Link, useParams, useNavigate } from "react-router-dom";
 
 function Nav() {
   const mobileWidth = IsMobileWidth();
@@ -24,12 +25,12 @@ function Nav() {
               <img src={Logo} className="w-7 h-10" />
             </div>
             <div>
-              <a
-                href="/home"
-                className=" text-3xl no-underline text-black hover:text-blue-dark mr-8 font-bold"
+              <Link
+                to={"/"}
+                className="text-3xl no-underline text-black mr-8 font-bold"
               >
                 Iminn
-              </a>
+              </Link>
             </div>
           </div>
           <div
@@ -38,30 +39,36 @@ function Nav() {
               mobileWidth && "visibility: hidden"
             )}
           >
-            <a
-              href="/one"
+            <Link
+              to="/"
               className="text-lg no-underline text-grey-darkest hover:text-blue-dark ml-2"
             >
               Home
-            </a>
-            <a
-              href="/two"
+            </Link>
+            <Link
+              to="/about"
               className="text-lg no-underline text-grey-darkest hover:text-blue-dark ml-2"
             >
               About
-            </a>
-            <a
-              href="/three"
+            </Link>
+            <Link
+              to="/blog"
               className="text-lg no-underline text-grey-darkest hover:text-blue-dark ml-2"
             >
               Blog
-            </a>
-            <a
-              href="/three"
+            </Link>
+            {/* <Link
+              href="/blog"
+              className="text-lg no-underline text-grey-darkest hover:text-blue-dark ml-2"
+            >
+              Blog
+            </Link> */}
+            <Link
+              href="/Contact"
               className="text-lg no-underline text-grey-darkest hover:text-blue-dark ml-2"
             >
               Contact Us
-            </a>
+            </Link>
           </div>
         </nav>
       )}

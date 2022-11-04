@@ -1,22 +1,17 @@
 import "./App.css";
-import Nav from "./components/Nav";
-import Main from "./components/Main";
-import Games from "./components/Games";
-import Chart from "./components/Chart";
-import Rate from "./components/Rate";
-import Last from "./components/Last";
-import Footer from "./components/Footer";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Blog from "./pages/Blog";
+import Home from "./pages/Home";
 
 function App() {
   return (
     <div className="App">
-      <Nav />
-      <Main />
-      <Games />
-      <Rate />
-      <Chart />
-      <Last />
-      <Footer />
+      <BrowserRouter basename="/landing_page">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/blog" element={<Blog />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

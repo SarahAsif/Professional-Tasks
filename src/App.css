@@ -86,4 +86,7 @@ input {
   height: 60px;
   padding: 20px;
 }
-
+.drawer{
+  width: 30px;
+  margin-right: 10px;
+}
