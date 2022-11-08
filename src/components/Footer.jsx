@@ -4,12 +4,12 @@ import clsx from "clsx";
 import { IsMobileWidth } from "../utils";
 import { IsTabletWidth } from "../utils";
 
-const Footer = () => {
+const Footer = (props) => {
   const mobileWidth = IsMobileWidth();
   const tabletWidth = IsTabletWidth();
 
   return (
-    <div className="p-5 bg-zinc-800">
+    <div className={`p-5 bg-zinc-800 ${props.color}`}>
       <nav
         className={clsx(
           "text-white px-40",

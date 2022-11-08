@@ -7,13 +7,13 @@ import { IsTabletWidth } from "../utils";
 import { IsDesktopSmallWidth } from "../utils";
 import { IsDesktopWidth } from "../utils";
 import { useNavigate } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const First = () => {
   const mobileWidth = IsMobileWidth();
   const tabletWidth = IsTabletWidth();
   const desktopSmallWidth = IsDesktopSmallWidth();
   const desktopWidth = IsDesktopWidth();
-  const navigate = useNavigate();
 
   return (
     <div className="leading-10 p-14">
@@ -34,9 +34,11 @@ const First = () => {
             <img src={Football1} className={clsx("", mobileWidth && "")} />
           </div>
           <div className={clsx("max-w-xl ", mobileWidth && "")}>
-            <div className="font-bold text-4xl my-3">
-              The best games in this year
-            </div>
+            <Link to="/article">
+              <div className="font-bold text-4xl my-3">
+                The best games in this year
+              </div>
+            </Link>
             <div className="text-zinc-800">
               Get ready for create awesome football game, climb the highest rank
               in your city. Reach the top level by playing the games and be a
@@ -50,7 +52,9 @@ const First = () => {
             className={clsx("flex flex-row items-center", mobileWidth && "")}
           >
             <div className={clsx("flex flex-col mt-5", mobileWidth && "")}>
-              <div className="font-bold">The best games in this year.</div>
+              <Link to="/article">
+                <div className="font-bold">The best games in this year.</div>
+              </Link>
               <div className="text-zinc-800">
                 Get ready for create awesome football game, climb the highest
                 rank
@@ -70,7 +74,9 @@ const First = () => {
             className={clsx("flex flex-row items-center", mobileWidth && "")}
           >
             <div className={clsx("flex flex-col", mobileWidth && "")}>
-              <div className="font-bold">The best games in this year.</div>
+              <Link to="/article">
+                <div className="font-bold">The best games in this year.</div>
+              </Link>
               <div className="text-zinc-800">
                 Get ready for create awesome football game, climb the highest
                 rank{" "}
@@ -90,7 +96,9 @@ const First = () => {
             className={clsx("flex flex-row items-center", mobileWidth && "")}
           >
             <div className={clsx("flex flex-col", mobileWidth && "")}>
-              <div className="font-bold">The best games in this year.</div>
+              <Link to="/article">
+                <div className="font-bold">The best games in this year.</div>
+              </Link>
               <div className="text-zinc-800">
                 Get ready for create awesome football game, climb the highest
                 rank{" "}
@@ -110,7 +118,9 @@ const First = () => {
             className={clsx("flex flex-row items-center ", mobileWidth && "")}
           >
             <div className={clsx("flex flex-col", mobileWidth && "")}>
-              <div className="font-bold">The best games in this year.</div>
+              <Link to="/article">
+                <div className="font-bold">The best games in this year.</div>
+              </Link>
               <div className="text-zinc-800">
                 Get ready for create awesome football game, climb the highest
                 rank{" "}

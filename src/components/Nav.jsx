@@ -64,7 +64,7 @@ function Nav() {
               Blog
             </Link> */}
             <Link
-              href="/Contact"
+              to="/Contact"
               className="text-lg no-underline text-grey-darkest hover:text-blue-dark ml-2"
             >
               Contact Us
